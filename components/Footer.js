@@ -5,12 +5,12 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <h2 className="text-xl font-bold">Contact Us</h2>
             <p>Email: <a href="mailto:support@mcpagents.com" className="underline hover:text-mcp-purple">support@mcpagents.com</a></p>
-            <p>Telegram: <a href="#" className="underline hover:text-mcp-purple">@mcpagents</a></p>
-            <p>Twitter: <a href="#" className="underline hover:text-mcp-purple">@mcpagents</a></p>
-            <p>CA: <span className="text-mcp-purple">California HQ</span></p>
+            <p>Github: <a href="https://github.com/MCPAgents/agency" className="underline hover:text-mcp-purple">@mcpagents</a></p>
+            <p>Twitter: <a href="https://x.com/vicunai_?s=11&t=IrGkUBzm35569bCilBv5oA" className="underline hover:text-mcp-purple">@mcpagents</a></p>
+            <p>CA: <a href="123456788" className="underline hover:text-mcp-purple">@mcpagents</a></p>
           </div>
           <div className="text-center">
-            <p className="text-sm text-gray-400">© {new Date().getFullYear()} MCP Agents. All rights reserved.</p>
+            <p className="text-sm text-gray-400">© {new Date().getFullYear()} MCP Agents.</p>
           </div>
         </div>
       </footer>
