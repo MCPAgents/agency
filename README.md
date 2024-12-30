@@ -5,6 +5,8 @@ Welcome to **MCP Agents**, a modern web interface showcasing the revolutionary *
 
 With **MCP**, the way AI models interact and share contexts is being transformed into a standardized, scalable, and flexible solution. This project serves as both an introduction to the protocol and a resource hub for developers. 💡
 
+(Using Anthropic MCP protocol)[https://modelcontextprotocol.io/introduction]:
+![Alt text](image.png)
 ---
 
 ## 🤔 What is MCP?
