@@ -6,10 +6,11 @@ module.exports = {
     ],
     theme: {
       extend: {
-        // Customize your theme for a futuristic look if needed
         colors: {
           "mcp-purple": "#7B61FF",
           "mcp-blue": "#1F3267",
+          "nav-gradient-start": "#3B0073",
+          "nav-gradient-end": "#7B61FF",
         },
       },
     },
