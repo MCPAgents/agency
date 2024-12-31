@@ -6,8 +6,8 @@ export default function Footer() {
             <h2 className="text-xl font-bold">Contact Us</h2>
             <p>Email: <a href="mailto:support@mcpagentsai.com" className="underline hover:text-mcp-purple">support@mcpagentsai.com</a></p>
             <p>Github: <a href="https://github.com/MCPAgents/agency" className="underline hover:text-mcp-purple">@mcpagents</a></p>
-            <p>Twitter: <a href="https://x.com/vicunai_?s=11&t=IrGkUBzm35569bCilBv5oA" className="underline hover:text-mcp-purple">@mcpagents</a></p>
-            <p>CA: <a href="https://pump.fun/coin/HMZHh2fSK6KCLbvRjBEEJsaRNuBVPLYGWrsPZ6Tva3c6pump" className="underline hover:text-mcp-purple">HMZHh2fSK6KCLbvRjBEEJsaRNuBVPLYGWrsPZ6Tva3c6</a></p>
+            <p>Twitter: <a href="https://x.com/mcpagentai?s=21&t=IrGkUBzm35569bCilBv5oA" className="underline hover:text-mcp-purple">@mcpagents</a></p>
+            <p>CA: <a href="https://pump.fun/coin/Gck774DrZPddYeeU3Pm58WSzi4Eo4oXKPNf1yJVLt5DGpump" className="underline hover:text-mcp-purple">Gck774DrZPddYeeU3Pm58WSzi4Eo4oXKPNf1yJVLt5DG</a></p>
           </div>
           <div className="text-center">
             <p className="text-sm text-gray-400">© {new Date().getFullYear()} MCP Agents.</p>
