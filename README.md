@@ -1,3 +1,74 @@
+# 🚀 MCPAgent SDK & Website
+
+**Download/Clone** this project from GitHub, or copy the files directly to your environment.
+
+---
+
+## 1. MCPAgent SDK (Python)
+
+The **MCPAgent SDK** provides a high-level interface for building and interacting with **MCP**-compatible servers. It uses the [MCP Python SDK](https://pypi.org/project/mcp/) under the hood to manage resources, tools, and prompts in a standardized way.
+
+### Installation
+
+1. **Install MCP** from PyPI:
+   ```bash
+   pip install mcp
+   ```
+
+2. **Clone** this repository or copy the relevant files (e.g., `mcpagent.py`, `server_multi.py`, etc.) into your project.
+
+### Getting Started with `MCPAgent`
+
+Below is a snippet showing how you can incorporate the **`MCPAgent`** class in your own Python code. This class launches your MCP server in a subprocess and helps you easily call resources, tools, or prompts.
+
+```python
+from mcpagent import MCPAgent  # example import from your local file
+import asyncio
+
+async def main():
+    # Point to your server script (e.g., server_multi.py)
+    agent = MCPAgent("server_multi.py")
+    
+    # Start MCP server & initialize session
+    await agent.start()
+
+    # Interact with the server: call a resource, tool, or prompt
+    info_text = await agent.read_info("Python")
+    print("Resource info:", info_text)
+
+    product = await agent.multiply(7, 8)
+    print("Tool result (7*8):", product)
+
+    prompt_messages = await agent.run_prompt("ChatGPT usage")
+    for msg in prompt_messages:
+        print(f"{msg.role.upper()} - {msg.content.text}")
+
+    # Clean up
+    await agent.stop()
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+### Core Features
+
+1. **Resource Access**  
+   Easily read or write contextual data via resource URIs (e.g., `myresource://...`).
+
+2. **Tool Invocation**  
+   Execute server-defined tools (functions) by name, passing in JSON arguments. Perfect for hooking into AI model logic.
+
+3. **Prompt Usage**  
+   Render or retrieve prompt templates from the server, returning them as messages for the LLM.
+
+4. **Subprocess Integration**  
+   The `MCPAgent` can spawn the MCP server script in a subprocess (via stdio), so you don’t need separate windows or manual commands.
+
+---
+
+## 2. MCP Website & Hosting Description
+
+The below describes the **MCP Agents** web interface and broader context for the **Model Context Protocol**.
 
 # 🚀 MCP Agents: The Future of AI Agent Architectures
 
@@ -5,8 +76,9 @@ Welcome to **MCP Agents**, a modern web interface showcasing the revolutionary *
 
 With **MCP**, the way AI models interact and share contexts is being transformed into a standardized, scalable, and flexible solution. This project serves as both an introduction to the protocol and a resource hub for developers. 💡
 
-(Using Anthropic MCP protocol)[https://modelcontextprotocol.io/introduction]:
+(Using Anthropic MCP protocol)[https://modelcontextprotocol.io/introduction]:  
 ![Alt text](image.png)
+
 ---
 
 ## 🤔 What is MCP?
@@ -25,15 +97,15 @@ Here’s why **MCP** matters:
 ## ✨ Features of MCP Agents
 
 - 🖼️ **Futuristic UI**: Built using **Next.js** and **Tailwind CSS**, providing a sleek and minimalistic experience.
-- 📚 **Tech Docs**: Curated documentation on how to get started with MCP, from Python SDKs to server setup.
-- 🗺️ **Roadmap**: A visual timeline of MCP's milestones and future plans.
+- 📑 **Tech Docs**: Curated documentation on how to get started with MCP, from Python SDKs to server setup.
+- 🗿 **Roadmap**: A visual timeline of MCP's milestones and future plans.
 
 ---
 
 ## 🚀 Getting Started
 
 ### 🔧 Prerequisites
-To run this project locally, you’ll need:
+To run the **web interface** locally, you’ll need:
 
 - **Node.js** (v16 or higher recommended)
 - **npm** or **yarn**
@@ -58,30 +130,18 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the w
 
 ---
 
-## 📚 Key Sections
+## 📑 Key Sections
 
 ### 🏠 Landing Page
-Learn what **MCP** is all about, with **real-world context** and **getting started code snippets**:
-
-```python
-# Install the MCP Python SDK
-pip install modelcontext
-
-# Example usage:
-from modelcontext import MCPClient
-
-client = MCPClient(api_key="YOUR_API_KEY", base_url="YOUR_MCP_SERVER_URL")
-response = client.generate("Hello, MCP!")
-print(response)
-```
+Learn what **MCP** is all about, with **real-world context** and **getting-started** code snippets.
 
 ### 📖 Tech Docs
 Comprehensive, developer-friendly guides covering:
 - 📦 MCP Python SDK installation and setup.
 - ⚙️ Creating an MCP-compliant server.
-- 🛠️ Example workflows and integrations.
+- 🔧 Example workflows and integrations.
 
-### 🗺️ Roadmap
+### 🗿 Roadmap
 A sleek, timeline-based visualization of MCP's progress:
 - ✅ **POC** and **MVP** completed.
 - 🚀 Next steps: **Scalability**, **Feature Enhancements**, and **Community Building**.
@@ -93,21 +153,21 @@ A sleek, timeline-based visualization of MCP's progress:
 This project is powered by:
 
 - ⚛️ **Next.js** – A React framework for server-side rendering and static site generation.
-- 🎨 **Tailwind CSS** – A utility-first CSS framework for rapid UI development.
+- 🌠 **Tailwind CSS** – A utility-first CSS framework for rapid UI development.
 - 💡 **react-syntax-highlighter** – Beautiful code highlighting for developers.
 
 ---
 
 ## 🤝 Contributing
 
-We’d love your help to improve MCP Agents! 🛠️ Feel free to:
+We’d love your help to improve **MCP Agents**! 🛠️ Feel free to:
 - Submit issues and pull requests.
 - Improve documentation and examples.
 - Share your feedback and suggestions.
 
 ---
 
-## 📬 Contact
+## 📩 Contact
 
 Got questions? Reach out to us via:
 
@@ -123,4 +183,5 @@ This project is licensed under the **MIT License**. Feel free to use, modify, an
 
 ---
 
-Enjoy building with MCP and shaping the future of AI! 🚀✨
+Enjoy building with **MCP** and the **MCPAgent SDK**, shaping the future of AI! 🚀✨
+
