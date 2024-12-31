@@ -7,7 +7,7 @@ export default function Footer() {
             <p>Email: <a href="mailto:support@mcpagentsai.com" className="underline hover:text-mcp-purple">support@mcpagentsai.com</a></p>
             <p>Github: <a href="https://github.com/MCPAgents/agency" className="underline hover:text-mcp-purple">@mcpagents</a></p>
             <p>Twitter: <a href="https://x.com/mcpagentai?s=21&t=IrGkUBzm35569bCilBv5oA" className="underline hover:text-mcp-purple">@mcpagents</a></p>
-            <p>CA: <a href="https://pump.fun/coin/Gck774DrZPddYeeU3Pm58WSzi4Eo4oXKPNf1yJVLt5DGpump" className="underline hover:text-mcp-purple">Gck774DrZPddYeeU3Pm58WSzi4Eo4oXKPNf1yJVLt5DG</a></p>
+            <p>CA: <a href="https://pump.fun/coin/Gck774DrZPddYeeU3Pm58WSzi4Eo4oXKPNf1yJVLt5DGpump" className="underline hover:text-mcp-purple">to be launched</a></p>
           </div>
           <div className="text-center">
             <p className="text-sm text-gray-400">© {new Date().getFullYear()} MCP Agents.</p>
