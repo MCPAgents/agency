@@ -12,83 +12,62 @@ export default function TechDocs() {
       <section className="max-w-4xl mx-auto my-8">
         <h1 className="text-4xl font-bold text-mcp-purple mb-4">Tech Docs</h1>
 
-        {/* Python SDK */}
+        {/* MCPAgent SDK */}
         <article className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">MCP Python SDK</h2>
+          <h2 className="text-2xl font-semibold mb-2">MCPAgent SDK</h2>
           <p className="mb-4 text-lg">
-            The <strong>MCP Python SDK</strong> provides a straightforward 
-            way to integrate your Python applications with the MCP protocol, 
-            handling API requests and context management behind the scenes.
+            The <strong>MCPAgent SDK</strong> simplifies interaction with MCP servers by handling subprocess communication, API requests, and context management seamlessly.
           </p>
           <ol className="list-decimal list-inside mb-4 text-lg">
-            <li>
-              Install the SDK: <code className="bg-black px-2 py-1 rounded">pip install modelcontext</code>
-            </li>
-            <li>Configure the <code className="bg-black px-2 py-1 rounded">MCPClient</code></li>
-            <li>Start generating or retrieving context easily</li>
+            <li>Install the SDK: <code className="bg-black px-2 py-1 rounded">pip install mcp</code></li>
+            <li>Initialize the <code>MCPAgent</code> class</li>
+            <li>Start interacting with resources, tools, and prompts</li>
           </ol>
           <SyntaxHighlighter language="python" style={oneDark} customStyle={{ borderRadius: '8px' }}>
-{`from modelcontext import MCPClient
+{`from mcpagent import MCPAgent
+import asyncio
 
-client = MCPClient(
-    api_key="YOUR_API_KEY",
-    base_url="YOUR_MCP_SERVER_URL"
-)
+async def main():
+    agent = MCPAgent("server_multi.py")
+    await agent.start()
+    
+    info = await agent.read_info("ChatGPT")
+    print("Resource Info:", info)
+    
+    result = await agent.multiply(5, 10)
+    print("Tool Multiply Result:", result)
+    
+    await agent.stop()
 
-response = client.generate("Integration test with MCP!")
-print(response)
+asyncio.run(main())
 `}
           </SyntaxHighlighter>
         </article>
 
-        {/* Create Python Server */}
+        {/* Python Server */}
         <article className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">Create Python Server</h2>
+          <h2 className="text-2xl font-semibold mb-2">Hosting MCP Servers</h2>
           <p className="mb-4 text-lg">
-            The <strong>create-python-server</strong> tool bootstraps an 
-            MCP-compliant server, perfect for local testing or small-scale 
-            deployments.
+            Hosting an MCP server allows you to provide context, tools, and prompts to AI systems. Use the examples in the repository to get started:
           </p>
-          <ol className="list-decimal list-inside mb-4 text-lg">
-            <li>
-              Install: <code className="bg-black px-2 py-1 rounded">pip install create-python-server</code>
-            </li>
-            <li>Use the CLI to scaffold a new project</li>
-            <li>Configure your <code>.env</code> or settings file</li>
-          </ol>
           <SyntaxHighlighter language="bash" style={oneDark} customStyle={{ borderRadius: '8px' }}>
-{`# Initialize a new MCP Python server
-create-python-server init my_mcp_server
+{`# Clone the repository
+git clone https://github.com/yourusername/mcpagentsdk.git
 
-# Navigate to project folder
-cd my_mcp_server
+# Navigate to examples
+cd mcpagentsdk/examples
 
-# Run the server
-python main.py
+# Run the multi-feature server
+python server_multi.py
 `}
           </SyntaxHighlighter>
         </article>
 
-        {/* MCP Servers */}
+        {/* Advanced Setup */}
         <article className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">MCP Servers</h2>
+          <h2 className="text-2xl font-semibold mb-2">Advanced Features</h2>
           <p className="mb-4 text-lg">
-            The <strong>MCP Servers</strong> repository contains examples for 
-            hosting your MCP context in production. These servers act as a 
-            central hub for AI model contexts.
-          </p>
-          <SyntaxHighlighter language="bash" style={oneDark} customStyle={{ borderRadius: '8px' }}>
-{`# Clone the servers repo
-git clone https://github.com/modelcontextprotocol/servers.git
-
-# Example: Running a local MCP server
-cd servers/local-example
-python server.py
-`}
-          </SyntaxHighlighter>
-          <p className="text-lg">
-            For advanced setups, consider Docker or Kubernetes for 
-            containerized deployments.
+            The MCPAgent SDK supports advanced workflows like chaining prompts, async callbacks, and managing server events. Check out the repository for more details and examples.
           </p>
         </article>
       </section>

@@ -30,42 +30,42 @@ export default function Home() {
 
         <p className="leading-7 text-lg md:text-xl">
           The <strong>Model Context Protocol (MCP)</strong> is the next step 
-          forward in AI agent architectures. Released by Anthropic in late 
-          November 2024, it promises to unify AI models, contexts, and servers 
-          under one future-proof standard. 
+          forward in AI agent architectures. It standardizes context sharing 
+          across AI systems and models for seamless integration.
         </p>
 
         <p className="leading-7 text-lg md:text-xl">
-          As highlighted in <a
-            href="https://www.anthropic.com/news/model-context-protocol"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-mcp-purple hover:underline"
-          >
-            Anthropic’s press release
-          </a>, the MCP specification allows for 
-          seamless context sharing across AI models, enabling more flexible 
-          and powerful AI solutions. Central to this standard are 
-          <strong className="underline decoration-mcp-purple"> MCP servers</strong>, 
-          specialized services that transmit and manage context among multiple AI models.
+          With the <strong>MCPAgent SDK</strong>, developers can easily interact 
+          with MCP-compliant servers, execute tools, retrieve resources, and 
+          integrate custom AI workflows.
         </p>
 
         {/* Getting Started Code Block */}
         <div className="my-8 p-6 bg-gray-800 rounded-lg shadow-lg">
           <h2 className="text-2xl font-semibold mb-4 text-center text-mcp-purple">Getting Started</h2>
           <p className="mb-4 text-center">
-            A quick snippet to begin your MCP journey in Python:
+            A quick example using the MCPAgent SDK:
           </p>
           <SyntaxHighlighter language="python" style={oneDark} customStyle={{ borderRadius: '8px' }}>
-{`# Install the MCP Python SDK
-pip install modelcontext
+{`# Use the MCPAgent class to interact with an MCP server
+from mcpagent import MCPAgent
+import asyncio
 
-# Example usage:
-from modelcontext import MCPClient
+async def main():
+    agent = MCPAgent("server_multi.py")
+    await agent.start()
+    
+    # Retrieve a resource
+    info = await agent.read_info("Python")
+    print("Info Resource:", info)
+    
+    # Call a tool
+    result = await agent.multiply(7, 8)
+    print("Multiply Result:", result)
+    
+    await agent.stop()
 
-client = MCPClient(api_key="YOUR_API_KEY", base_url="YOUR_MCP_SERVER_URL")
-response = client.generate("Hello, MCP!")
-print(response)
+asyncio.run(main())
 `}
           </SyntaxHighlighter>
         </div>

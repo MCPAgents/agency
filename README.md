@@ -39,7 +39,7 @@ async def main():
     product = await agent.multiply(7, 8)
     print("Tool result (7*8):", product)
 
-    prompt_messages = await agent.run_prompt("ChatGPT usage")
+    prompt_messages = await agent.run_prompt("You are a powerful math Agent\nQ: give the formula of derivative of cos(x)\nA:")
     for msg in prompt_messages:
         print(f"{msg.role.upper()} - {msg.content.text}")
 
@@ -76,7 +76,7 @@ Welcome to **MCP Agents**, a modern web interface showcasing the revolutionary *
 
 With **MCP**, the way AI models interact and share contexts is being transformed into a standardized, scalable, and flexible solution. This project serves as both an introduction to the protocol and a resource hub for developers. 💡
 
-(Using Anthropic MCP protocol)[https://modelcontextprotocol.io/introduction]:  
+[https://modelcontextprotocol.io/introduction](MCP tech-spec)
 ![Alt text](image.png)
 
 ---
@@ -172,14 +172,7 @@ We’d love your help to improve **MCP Agents**! 🛠️ Feel free to:
 Got questions? Reach out to us via:
 
 - **Email**: [support@mcpagents.com](mailto:support@mcpagents.com)
-- **Telegram**: [@mcpagents](https://t.me/mcpagents)
-- **Twitter**: [@mcpagents](https://twitter.com/mcpagents)
-
----
-
-## ⚖️ License
-
-This project is licensed under the **MIT License**. Feel free to use, modify, and share it!
+- **Twitter**: [@mcpagents](https://x.com/mcpagentai?s=21&t=IrGkUBzm35569bCilBv5oA)
 
 ---
 
